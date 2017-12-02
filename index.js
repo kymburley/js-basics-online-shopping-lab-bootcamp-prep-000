@@ -73,19 +73,27 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-  if ( cart.hasOwnProperty(item) === false ) {
-    console.log( "That item is not in your cart." );
-    return cart;
-  } else {
-    for ( var key in cart ) {
-      if ( item === key ) {
-          cart.slice(1);
-
-          return cart;
-      }
-    }
-
+  var found = false;
+  
+  for (var key in cart) {
+    var theItem = Object.keys(cart[key]).toLocaleString();
+    
+    //console.log(theItem)
+    
+    /*if ( Object.keys(cart[key] !== item ) ) {*/
+    if ( item === theItem ) {
+      found = true;
+      
+      cart.splice(Number(key), 1);
+    } 
   }
+  
+  if ( !found ) {
+    console.log( "That item is not in your cart." );
+  }
+  
+  //console.log(cart);
+  return cart;
 }
 
 function placeOrder(cardNumber) {
