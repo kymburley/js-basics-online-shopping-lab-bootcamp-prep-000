@@ -79,7 +79,7 @@ function removeFromCart(item) {
     for ( var key in cart ) {
       if ( cart.hasOwnProperty(item) ) {
         if ( cart[key] === item ) {
-          delete cart[key];
+          delete cart.item;
         }
       }
     }
