@@ -74,24 +74,24 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var found = false;
-  
+
   for (var key in cart) {
     var theItem = Object.keys(cart[key]).toLocaleString();
-    
+
     //console.log(theItem)
-    
+
     /*if ( Object.keys(cart[key] !== item ) ) {*/
     if ( item === theItem ) {
       found = true;
-      
+
       cart.splice(Number(key), 1);
-    } 
+    }
   }
-  
+
   if ( !found ) {
     console.log( "That item is not in your cart." );
   }
-  
+
   //console.log(cart);
   return cart;
 }
