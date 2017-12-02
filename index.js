@@ -79,9 +79,11 @@ function removeFromCart(item) {
     for ( var key in cart ) {
       if ( item === key ) {
           delete cart[item];
+
+          return cart;
       }
     }
-    return cart;
+    
   }
 }
 
