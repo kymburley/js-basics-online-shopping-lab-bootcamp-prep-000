@@ -77,14 +77,9 @@ function removeFromCart(item) {
 
   for (var key in cart) {
     var theItem = Object.keys(cart[key]).toLocaleString();
-
-    //console.log(theItem)
-
-    /*if ( Object.keys(cart[key] !== item ) ) {*/
-    if ( item === theItem ) {
-      found = true;
-
-      cart.splice(Number(key), 1);
+      if ( item === theItem ) {
+        found = true;
+        cart.splice(Number(key), 1);
     }
   }
 
@@ -92,7 +87,6 @@ function removeFromCart(item) {
     console.log( "That item is not in your cart." );
   }
 
-  //console.log(cart);
   return cart;
 }
 
