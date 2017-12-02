@@ -78,7 +78,7 @@ function removeFromCart(item) {
   } else {
     for ( var key in cart ) {
       if ( item === key ) {
-          cart.slice(item);
+          cart.slice(key);
 
           return cart;
       }
