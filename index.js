@@ -75,6 +75,7 @@ function removeFromCart(item) {
   // write your code here
   if ( cart.hasOwnProperty(item) === false ) {
     console.log( "That item is not in your cart." );
+    return cart;
   } else {
     for ( var key in cart ) {
       if ( item === key ) {
