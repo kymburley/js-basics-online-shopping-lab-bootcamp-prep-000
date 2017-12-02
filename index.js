@@ -77,10 +77,8 @@ function removeFromCart(item) {
     console.log( "That item is not in your cart." );
   } else {
     for ( var key in cart ) {
-      if ( cart.hasOwnProperty(item) ) {
-        if ( cart[key] === item ) {
+      if ( Object.keys(cart[key]) === item ) {
           delete cart.item;
-        }
       }
     }
     return cart;
